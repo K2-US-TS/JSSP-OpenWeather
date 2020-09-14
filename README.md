@@ -11,7 +11,7 @@ This is only a sample broker and is not supported by the product team.
  ## Features
  This broker currently supports the followings:
  
- ### Text Analysis and Moderation
+ ### Current Weather data
  - GetCurrentWeather: Input city name and units (imperial/metric/kevin) and return current weather information (condition, temperature, and feels like temperature).
  
 Additional Information:  [API Reference](https://openweathermap.org/current)
