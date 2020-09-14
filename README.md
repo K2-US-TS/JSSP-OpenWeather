@@ -1,62 +1,32 @@
-# K2 TypeScript Broker for OpenWeather API
-
-This is a sample JSSP Broker for OpenWeather and is not an supported by K2.  Feel free to use/improve/enhance. Use at your own risks. Happy coding. 
-
-
-# Features
-
-  This version of the ServiceNow broker supports the following ServiceNow Incident interfaces:
- - ListIncidents
- - Get Current Weather (City, Units)    ---- Units: Imperial/Metric
+# JSSP-OpenWeather
  
- # Service Keys and authentication
- This broker has a service key called "API Key" which you need to obtain OpenWeather.
+ ## JSSP Broker for OpenWeather API
+ Sample K2 JSSP Broker connecting K2 to Open Weather services based on **Open Weather API Version 2.5** (http://api.openweathermap.org/data/2.5/weather)
+ 
 
-## Getting Started
+This is only a sample broker and is not supported by the product team.
+ 
+ ***Use this code at your own risk, Happy Coding.***
+  
+ ## Features
+ This broker currently supports the followings:
+ 
+ ### Text Analysis and Moderation
+ - GetCurrentWeather: Input city name and units (imperial/metric/kevin) and return current weather information (condition, temperature, and feels like temperature).
+ 
+Additional Information:  [API Reference](https://openweathermap.org/current)
 
-This template requires [Node.js](https://nodejs.org/) v12.14.1+ to run.
+## What is required to create a K2 Service Instance:
+- API Key from open weather
 
-Install the dependencies and devDependencies:
+You'll need to create a developer account on [OpenWeather website](https://openweather.org)
 
-```bash
-npm install
-```
 
-See the documentation for [@k2oss/k2-broker-core](https://www.npmjs.com/package/@k2oss/k2-broker-core)
-for more information about how to use the broker SDK package.
+## To deploy the broker to a K2 Nexus platform
+To deploy this broker you can use the bundled JS file under dist folder. Follow the [product documentation here](https://help.k2.com/onlinehelp/platform/userguide/current/default.htm#../Subsystems/Default/Content/Extend/JS-Broker/JSSPRegister.htm%3FTocPath%3DDevelop%7CExtending%2520the%2520K2%2520Nexus%2520Platform%7CCustom%2520Service%2520Types%2520with%2520the%2520JavaScript%2520Service%2520Provider%2520(JSSP)%7C_____8) to deploy the bundled js file to your K2 Nexus instance
 
-## Running Unit Tests
-To run the unit tests, run:
-
-```bash
-npm test
-```
-
-You can also use a development build, for debugging and coverage gutters:
-
-```bash
-npm run test:dev
-```
-
-You will find the code coverage results in [coverage/index.html](./coverage/index.html).
-
-## Building your bundled JS
-When you're ready to build your broker, run the following command
-
-```bash
-npm run build
-```
-
-You will find the results in the [dist/index.js](./dist/index.js).
-
-## Creating a service type
-Once you have a bundled .js file, upload it to your repository (anonymously
-accessible) and register the service type using the system SmartObject located
-at System > Management > SmartObjects > SmartObjects > JavaScript Service
-Provider and run the Create From URL method.
-
-### License
-
-MIT, found in the [LICENSE](./LICENSE) file.
-
-[www.k2.com](https://www.k2.com)
+## To modify this broker for your use cases:
+1. Download this repository
+2. Run "npm install"
+3. Modify the code in index.ts under the src folder
+4. Then run "npm run build" to generate a new bundled JS file for deployment.
